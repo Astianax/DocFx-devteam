@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/projects/Documentation/docfx-material/docs",
+  "source_base_path": "D:/NewProjectsDevteam/Documentation/docfx-material/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "CHANGELOG.html",
-          "hash": "us4OjXGA1/KvpDkHKIrw/Q=="
+          "hash": "rzXULBgr8O8JTmcLN4m4Lw=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "/YObw4lt7m3J0Ul19EqgLg=="
+          "hash": "9p9kd/dofciu71FcrCctqQ=="
         }
       },
       "is_incremental": false,
@@ -50,11 +50,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/standard/back-end/bestPractice.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/standard/back-end/bestPractice.html",
+          "hash": "G2SBwd3M4YwRHKPEfShcUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/standard/back-end/formatting.md",
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/formatting.html",
-          "hash": "43ll8i9cJXeVQaUczSv3ZQ=="
+          "hash": "baWR5ucexPM/cH0j7MefTg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/languageUsage.html",
-          "hash": "UK2MC025vqCaPGXfZqvNow=="
+          "hash": "ALiOY5YoTZbeWLB5ZLoRWw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/naming.html",
-          "hash": "xpEz0RXZDDOlYFEnD72OgQ=="
+          "hash": "QFgdLm9gZXbgaqMmMkpAdQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/content4.html",
-          "hash": "PtR8g/bzDy/T7Ln+D6eErg=="
+          "hash": "SxsubM6DkWSB1ZyOk+J5Pw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/front-end/content3.html",
-          "hash": "3ZCNcSHWQhVGL3t5caRjHw=="
+          "hash": "sdrzDYI4Un4z41HEgBsGtw=="
         }
       },
       "is_incremental": false,
@@ -114,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/intro.html",
-          "hash": "MTcwRNMtNBbF2KBrjyenoA=="
+          "hash": "A7ByLHcpk51ZkueyBfJ6HQ=="
         }
       },
       "is_incremental": false,
@@ -126,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/toc.html",
-          "hash": "DNay9V6Umx79OVsfa0MmIA=="
+          "hash": "6ZjeXz0wmq6I2Ynzbaja5A=="
         }
       },
       "is_incremental": false,
@@ -215,7 +227,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "M309IZm6sFUqyH2MdKXzVQ=="
+          "hash": "t+boLfVhWynjJPYtyIQzrQ=="
         }
       },
       "is_incremental": false,
@@ -246,8 +258,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 9,
-          "skipped_file_count": 8
+          "total_file_count": 10,
+          "skipped_file_count": 9
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

@@ -5,3 +5,5 @@ items:
   href: formatting.md
 - name: 'Language Usage'
   href: languageUsage.md
+- name: 'Best Practices and Tips'
+  href: bestPractice.md

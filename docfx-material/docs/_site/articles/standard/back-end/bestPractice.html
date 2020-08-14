@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Table of Standard Control Prefixes | DocFX Material </title>
+    <title>Data Base | DocFX Material </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Table of Standard Control Prefixes | DocFX Material ">
+    <meta name="title" content="Data Base | DocFX Material ">
     <meta name="generator" content="docfx 2.56.2.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -77,159 +77,41 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="table-of-standard-control-prefixes">Table of Standard Control Prefixes</h2>
+<h1 id="data-base">Data Base</h1>
 
-<p>The following table is a list of the common types of controls you will encounter together with their prefixes:</p>
-<table>
-<thead>
-<tr>
-<th><strong>Prefix</strong></th>
-<th><strong>Control</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>btn</td>
-<td>Button</td>
-</tr>
-<tr>
-<td>cb</td>
-<td>CheckBox</td>
-</tr>
-<tr>
-<td>cbl</td>
-<td>CheckBoxList</td>
-</tr>
-<tr>
-<td>ddl</td>
-<td>DropDownList</td>
-</tr>
-<tr>
-<td>fu</td>
-<td>FileUpload</td>
-</tr>
-<tr>
-<td>hf</td>
-<td>HiddenField</td>
-</tr>
-<tr>
-<td>hl</td>
-<td>HyperLink</td>
-</tr>
-<tr>
-<td>img</td>
-<td>Image</td>
-</tr>
-<tr>
-<td>ibtn</td>
-<td>ImageButton</td>
-</tr>
-<tr>
-<td>lbl</td>
-<td>Label</td>
-</tr>
-<tr>
-<td>lbtn</td>
-<td>LinkButton</td>
-</tr>
-<tr>
-<td>lb</td>
-<td>ListBox</td>
-</tr>
-<tr>
-<td>lit</td>
-<td>Literal</td>
-</tr>
-<tr>
-<td>mvw</td>
-<td>MultiView</td>
-</tr>
-<tr>
-<td>pnl</td>
-<td>Panel</td>
-</tr>
-<tr>
-<td>ph</td>
-<td>PlaceHolder</td>
-</tr>
-<tr>
-<td>rb</td>
-<td>RadioButton</td>
-</tr>
-<tr>
-<td>rbl</td>
-<td>RadioButtonList</td>
-</tr>
-<tr>
-<td>txt</td>
-<td>TextBox</td>
-</tr>
-<tr>
-<td>vw</td>
-<td>View</td>
-</tr>
-<tr>
-<td>wzd</td>
-<td>Wizard</td>
-</tr>
-<tr>
-<td>lvw</td>
-<td>ListView</td>
-</tr>
-<tr>
-<td>gvw</td>
-<td>GridView</td>
-</tr>
-<tr>
-<td>fvw</td>
-<td>FormView</td>
-</tr>
-<tr>
-<td>rpt</td>
-<td>Repeater</td>
-</tr>
-<tr>
-<td>ods</td>
-<td>ObjectDataSource</td>
-</tr>
-<tr>
-<td>valreq</td>
-<td>RequiredFieldValidator</td>
-</tr>
-<tr>
-<td>valrng</td>
-<td>RangeValidator</td>
-</tr>
-<tr>
-<td>valcom</td>
-<td>CompareValidator</td>
-</tr>
-<tr>
-<td>valrex</td>
-<td>RegularExpressionValidator</td>
-</tr>
-<tr>
-<td>valcus</td>
-<td>CustomValidator</td>
-</tr>
-<tr>
-<td>valsum</td>
-<td>ValidationSummary</td>
-</tr>
-<tr>
-<td>sm</td>
-<td>ScriptManager</td>
-</tr>
-<tr>
-<td>udp</td>
-<td>UpdatePanel</td>
-</tr>
-<tr>
-<td>up</td>
-<td>UpdateProgress</td>
-</tr>
-</tbody>
-</table>
+<h2 id="table-prefix">Table Prefix</h2>
+<p>Database tables should have a prefix associated per module in the application. For example: SYS for system, WKF for workflow. After each prefix should have an underscore &quot;_&quot;.</p>
+<p>Use CODE prefix for lookup tables and CONF prefix for configuration tables.</p>
+<h2 id="table-name">Table Name</h2>
+<p>After prefix is used the table name should be named using Pascal Case, were the first letter of each word is CAPITLIZED.  For example:  PEI_WorkflowStep.</p>
+<h2 id="field-name">Field Name</h2>
+<p>Each table field name should be named using Pascal Case, were the first letter of each word is CAPITLIZED.  For example:  PEI_Student.FirstName.</p>
+<h2 id="fields-required-and-order">Fields Required and Order</h2>
+<p>Each table must contain the following required fields: CreatedBy, CreatedDate, UpdatedBy, Updated Date and IsDeleted. The order established for the table fields is:</p>
+<ol>
+<li>Primary Key ID</li>
+<li>Foreign Keys ID</li>
+<li>Other Fields</li>
+<li>Required Fields (CreatedBy, CreatedDate, etc.)</li>
+</ol>
+<h1 id="references">References</h1>
+<p>The following references were used in the creation of this Coding Standards Guide.</p>
+<ul>
+<li>Encodo c Handbook
+<a href="http://archive.msdn.microsoft.com/encodocsharphandbook/Release/ProjectReleases.aspx?ReleaseId=3352">http://archive.msdn.microsoft.com/encodocsharphandbook/Release/ProjectReleases.aspx?ReleaseId=3352</a></li>
+<li>CSharp Coding Standards
+<a href="http://weblogs.asp.net/lhunt/pages/CSharp-Coding-Standards-document.aspx">http://weblogs.asp.net/lhunt/pages/CSharp-Coding-Standards-document.aspx</a></li>
+<li>Microsoft All-In-One Code Framework Coding Guideline
+<a href="http://1code.codeplex.com/wikipage?title=All-In-One%20Code%20Framework%20Coding%20Standards&amp;referringTitle=Documentation">http://1code.codeplex.com/wikipage?title=All-In-One%20Code%20Framework%20Coding%20Standards&amp;referringTitle=Documentation</a></li>
+<li>c / VB.Net Coding Guidelines
+<a href="http://submain.com/blog/FreeCVBNETCodingGuidelinesEbookDownload.aspx">http://submain.com/blog/FreeCVBNETCodingGuidelinesEbookDownload.aspx</a></li>
+<li>Top 10 Best Practices for Production ASP.NET Applications
+<a href="http://daptivate.com/archive/2008/02/12/top-10-best-practices-for-production-asp-net-applications.aspx">http://daptivate.com/archive/2008/02/12/top-10-best-practices-for-production-asp-net-applications.aspx</a></li>
+<li>Best Practices to Improve ASP.Net Web Application Performance
+<a href="http://www.dotnetfunda.com/articles/article45.aspx">http://www.dotnetfunda.com/articles/article45.aspx</a></li>
+<li>ASP.NET Best Practices for High Performance Applications
+<a href="http://www.codeproject.com/KB/aspnet/ASPNET_Best_Practices.aspx">http://www.codeproject.com/KB/aspnet/ASPNET_Best_Practices.aspx</a></li>
+</ul>
 </article>
           </div>
           
@@ -238,7 +120,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href=" https://github.com/Astianax/DocFx-devteam/blob/master/docfx-material/docs/articles/standard/front-end/content3.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href=" https://github.com/Astianax/DocFx-devteam/blob/Feature/BestPractice/docfx-material/docs/articles/standard/back-end/bestPractice.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
