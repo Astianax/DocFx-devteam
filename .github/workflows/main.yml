@@ -29,9 +29,19 @@ jobs:
         args: docfx-material/docs/docfx.json
 
     # Publish generated site using GitHub Pages
-    - name: Deploy Netlify
-      uses: danakim/gh-action-deploy-netlify@master
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v1.1
       with:
-        AUTH_TOKEN: '5e63d94fdfbed0ae8b4e6cf7a0c8d35f4d2c0394d45ff8ee89f0eeca4925020e'
-        SITE_ID: '47ea137e-4494-49ae-9ea8-e8a5d4e37470'
-        DEPLOY_PROD: true
+        publish-dir: './dist'
+        production-branch: master
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Deploy from GitHub Actions"
+        enable-pull-request-comment: false
+        enable-commit-comment: true
+        overwrites-pull-request-comment: true
+      env:
+        NETLIFY_AUTH_TOKEN: '5e63d94fdfbed0ae8b4e6cf7a0c8d35f4d2c0394d45ff8ee89f0eeca4925020e'
+        NETLIFY_SITE_ID:  '47ea137e-4494-49ae-9ea8-e8a5d4e37470'
+        #NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        #NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      timeout-minutes: 1
