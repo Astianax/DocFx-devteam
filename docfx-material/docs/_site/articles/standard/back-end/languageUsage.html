@@ -1,0 +1,635 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Declaration Order | CDevTeam Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Declaration Order | CDevTeam Docs ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo_.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="declaration-order">Declaration Order</h2>
+
+<h1 id="section"></h1>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>Group internal class implementation by type in the following order:</li>
+</ul>
+<blockquote>
+<ol>
+<li>Nested Enums, Structs, and Classes</li>
+<li>Member variables</li>
+<li>Properties</li>
+<li>Constructors &amp; Finalizers</li>
+<li>Methods</li>
+</ol>
+</blockquote>
+<ul>
+<li>Sequence declarations within type groups based upon access modifier and visibility:</li>
+</ul>
+<blockquote>
+<ol>
+<li>Public</li>
+<li>Protected</li>
+<li>Internal</li>
+<li>Private</li>
+</ol>
+</blockquote>
+<ul>
+<li>Segregate interface Implementation by using <strong>#region</strong> statements</li>
+</ul>
+</div>
+<h2 id="visibility">Visibility</h2>
+<h1 id="section-1"></h1>
+<pre><code>- The visibility modifier is required for all types, methods and fields; this makes the intention explicit and consistent.
+
+- The visibility keyword is always the first modifier.
+
+- The **const** or **readonly** keyword, if present, comes immediately after the visibility modifier.
+
+- The **static** keyword, if present, comes after the visibility modifier and **readonly** modifier.
+</code></pre>
+<blockquote>
+<p><strong>private readonly static string</strong>** DefaultDatabaseName** = &quot;admin&quot;;</p>
+</blockquote>
+<h2 id="constants">Constants</h2>
+<h1 id="section-2"></h1>
+<pre><code>- Declare all constants other than **0** , **1** , **true** , **false** and **null**.
+- Use **true** and **false** only for assignment, never for comparison.
+- Avoid passing **true** or **false** for parameters; use an **enum** or constants to impart meaning instead.
+- If there is a logical connection between two constants, indicate this by making the initialization of one dependent on the other.
+</code></pre>
+<blockquote>
+<p><strong>public const int</strong> DefaultCacheSize = 25;</p>
+<p><strong>public const int</strong> DefaultGranularity = DefaultCacheSize / 5;</p>
+</blockquote>
+<h2 id="readonly-vs-const">Readonly vs Const</h2>
+<h1 id="section-3"></h1>
+<pre><code>- The difference between **const** and **readonly** is that **const** is compiled and **readonly** is initialized at runtime.
+- Use **const** only when the value really is constant (e.g. **NumberDaysInWeek** ); otherwise, use **readonly**.
+- Though **readonly** for references only prevents writing of the reference, not the attached value, it is still a helpful hint for both the compiler and the reader.
+</code></pre>
+<h2 id="string-and-resources">String and Resources</h2>
+<h1 id="section-4"></h1>
+<pre><code>- **Do not** hardcode strings that will be presented to the user; use resources instead. For products in development, this text extraction can be performed after the code has crystallized somewhat.
+- Resource identifiers should be alphanumeric, but may also include a dot (&amp;quot;.&amp;quot;) to logically nest resources. It should contain the name of the control sample &amp;quot;lblName&amp;quot;, &amp;quot;lblLastName&amp;quot;, etc.
+- **Do not** use constants for strings; use resource tables instead (this aids translation, if necessary).
+- Configuration data should be moved into application settings as soon as possible.
+</code></pre>
+<h2 id="properties">Properties</h2>
+<pre><code>- Prefer automatic properties as it saves a lot of typing and vastly improves readability.
+</code></pre>
+<blockquote>
+<p><strong>public</strong>** bool <strong>ShowTab{</strong> get <strong>;</strong> set**;}</p>
+</blockquote>
+<pre><code>- If there a exceptional need to manage the internal value of public property then you can create private properties.
+- Use read-only properties if there is no logical reason for calling code to be able to change the value.
+- Properties should be commutative; that is, it should not matter in which order you set them.
+- Avoid enforcing an ordering by using a method to execute code that you would want to execute from the property setter. The following example is incorrect because setting the password before setting the name causes a login failure.
+</code></pre>
+<blockquote>
+<pre><code class="lang-csharp">class SecuritySystem
+{
+     public string UserName { get; set; }
+  
+     public int Password { get; set { LogIn(); }
+
+     protected void LogIn()
+     {
+           IPrincipal principal = Authenticate(UserName, Password);
+     }
+
+     private IPrincipal Authenticate(string UserName,int Password)
+     {
+           // Authenticate the user
+     }
+}
+</code></pre>
+</blockquote>
+<ul>
+<li>Instead, you should take the call LogIn() out of the setter for Password and make the method public, so the class can be used like this instead:</li>
+</ul>
+<blockquote>
+<pre><code class="lang-csharp">SecuritySystem system = new SecuritySystem();
+system.Password = &quot;knockknock&quot;;
+system.UserName = &quot;Encode&quot;;
+
+system.LogIn();
+</code></pre>
+</blockquote>
+<ul>
+<li>In this case, Password can be set before the UserName without causing any problems.</li>
+</ul>
+<h2 id="methods--functions">Methods / Functions</h2>
+<h1 id="section-5"></h1>
+<pre><code>- Methods should not have more than 200 lines of code.
+- Avoid returning null for methods that return collections or strings. Instead, return an empty collection (declare a static empty list) or an empty string (Empty).
+</code></pre>
+<p><strong>Overloads</strong> are encouraged for methods that are in the same family and either serve the same purpose or have similar behavior. Do not use the types of parameters to distinguish these functions from one another. For example, the following is incorrect</p>
+<blockquote>
+<pre><code class="lang-csharp">void Update();
+
+void UpdateUsingQuery(IQuery query);
+
+void UpdateUsingSql(string sql);
+</code></pre>
+</blockquote>
+<ul>
+<li>Instead, use an overload, letting the method signature describe the different functions. This reduces the perceived size of the API and makes it easier to understand.</li>
+</ul>
+<blockquote>
+<pre><code class="lang-csharp">**void** Update();
+
+**void** Update(IQuery query);
+
+**void** Update( **string** sql);
+</code></pre>
+</blockquote>
+<h2 id="parameters">Parameters</h2>
+<h1 id="section-6"></h1>
+<pre><code>- Methods should not have more than 10 parameters (consider using a **struct** instead).
+- Methods should not have more than 2 out or ref parameters (consider using a **struct** instead).
+- **ref** and **out** parameters should come last in the list of parameters.
+- The implementation of an interface method should use the same parameter name as that given in the interface method declaration.
+
+- **Do not** declare reserved parameters (use overloads in future library versions instead).
+</code></pre>
+<h2 id="classes">Classes</h2>
+<h1 id="section-7"></h1>
+<pre><code>- Never declare more than one field per line; each field should be an individually documentable entity.
+
+- **Do not** use **public** or **protected** fields; use private fields exposed through properties instead.
+
+- **Do not** create too many static classes; instead, determine whether new functionality can be added to an existing static class.
+</code></pre>
+<h2 id="interfaces">Interfaces</h2>
+<h1 id="section-8"></h1>
+<pre><code>- Use interfaces to &amp;quot;fake&amp;quot; multiple-inheritance.
+
+- Define interfaces if there will be more than one implementation of a hierarchy; without multiple-inheritance, this is the only way to remain flexible as to the implementation.
+
+- Define interfaces to clearly define what comprises an API; an interface will generally be smaller and more tightly-defined that the class that implements it. A class-based hierarchy runs the risk of mixing interface methods with implementation methods.
+
+- Consider using a c attribute instead of a marker interface (an interface with no members). This makes for a cleaner inheritance representation and indicates the use of the marker better (e.g. NUnit tests as well as the serializing subsystem for .NET use attributes instead of marker interfaces).
+
+- Re-use interfaces as much as possible to avoid having many very similar interfaces that cause confusion as to which one should be used where.
+
+- Keep interfaces relatively small in order to ease implementation (5-10 members).
+
+- Where possible, provide an abstract class or default descendent that application code can use for implementing an interface. This provides both an implementation example and some protection from future changes to the interface.
+
+- Use interfaces where the functionality isn&amp;#39;t the direct purpose of the object or to expose a part of the class&amp;#39;s functionality (as with aspect-oriented programming).
+
+- Use explicit interface implementation where appropriate to avoid expanding a class API unnecessarily.
+
+- Each interface should be used at least once in non-testing code; otherwise, get rid of it.
+
+- Always provide at least one, tested implementation of an interface.
+</code></pre>
+<h2 id="structs">Structs</h2>
+<h1 id="section-9"></h1>
+<p>Consider defining a structure instead of a class if most of the following conditions apply:</p>
+<ul>
+<li>Instances of the type are small (16 bytes or less) and commonly short-lived.</li>
+<li>The type is commonly embedded in other types.</li>
+<li>The type logically represents a single value and is similar to a primitive type, like an <strong>int</strong> or a <strong>double</strong>.</li>
+<li>The type is immutable.</li>
+<li>The type will not be boxed frequently.</li>
+</ul>
+<p>Use the following rules when defining a <strong>struct</strong> :</p>
+<pre><code>- Avoid methods; at most, have only one or two methods other than overrides and operator overloads.
+- Provide parameterized constructors for initialization.
+- In scenarios that require a significant amount of boxing and un-boxing, value types perform poorly as compared to     reference types.
+- Overload operators and equality as expected; implement IEquatable instead of overriding **Equals** in order to avoid the  negative performance impact of boxing and un-boxing the value.
+- A struct should be valid when uninitialized so that consumers can declare an instance without calling a constructor.
+- Public fields are allowed (even encouraged) for structures used to communicate with external APIs through unmanaged code.
+</code></pre>
+<h2 id="enumerations">Enumerations</h2>
+<h1 id="section-10"></h1>
+<ul>
+<li>Always use enumerations for strongly-typed sets of values</li>
+<li>Use enumerations instead of lists of static constants <em>unless</em> that list can be extended by descendent code; if the list is not logically open-ended, use an <strong>enum</strong>.</li>
+<li>Enumerations are like interfaces; be extremely careful of changing them when they are already included in code that is not under your control (e.g. used by a framework that is, in turn, used by external application code). If the enumeration must be changed, use the <strong>ObsoleteAttribute</strong> to mark members that are no longer in use.</li>
+<li><strong>Do not</strong> assign a type to an <strong>enum</strong> unless absolutely necessary; use the default type of <strong>Int32</strong> whenever possible.</li>
+<li><strong>Do not</strong> include sentinel values, such as <strong>FirstValue</strong> or <strong>LastValue</strong>.</li>
+<li><strong>Do not</strong> assign explicit values to simple enumerations except to enforce specific values for storage in a database.</li>
+<li>The first value in an enumeration is the default; make sure that the most appropriate simple enumeration value is listed first.</li>
+</ul>
+<h2 id="local-variables">Local variables</h2>
+<h1 id="section-11"></h1>
+<pre><code>Declare a local variable as close as possible to its first use (and within the most appropriate scope).
+
+If a local variable is initialized, put the initialization on the same line as the declaration. If the line gets too long, use multiple lines as described before in this guide.
+</code></pre>
+<h2 id="event-handlers">Event Handlers</h2>
+<h1 id="section-12"></h1>
+<p>You should use the pattern and support classes for event-handling provided by the .NET library.</p>
+<ul>
+<li>Do not expose delegates as public members; instead declare events using the event keyword.</li>
+<li><strong>Do not</strong> add a method to a delegate with new <strong>EventHandler(…)</strong>; instead, use delegate inference.</li>
+<li><strong>Do not</strong> define custom delegates for event handling; instead use <strong>EventHandler&amp;lt;T&amp;gt;</strong>.</li>
+<li>Put all extra event data into an <strong>EventArgs</strong> descendent; subsequent versions can alter this descendent without changing the signature.</li>
+<li>Use <strong>CancelEventArgs</strong> as the base class if you need to be able to cancel an event.</li>
+<li>Neither the sender parameter nor the <strong>args</strong> parameter may be null; this avoids forcing event handlers to check for null.</li>
+<li><strong>EventsArgs</strong> descendents should declare only properties, not methods or other application logic.</li>
+</ul>
+<h2 id="operators">Operators</h2>
+<h1 id="section-13"></h1>
+<ul>
+<li>Be extremely careful when overloading operators; in general, you should only do so for <strong>structs</strong>. If you feel that an operator overload is especially clever, it probably isn't; check with another developer before coding it.</li>
+<li>Avoid overriding the <strong>==</strong> operator for reference types; override the <strong>Equals()</strong> method instead to avoid redefining reference equality.</li>
+<li>If you do override <strong>Equals()</strong>, you should also override <strong>GetHashCode()</strong>.</li>
+<li>If you do override the <strong>==</strong> operator, consider overriding the other comparison operators <strong>(!=, &amp;lt;, &amp;lt;=, &amp;gt;, &amp;gt;=)</strong> as well.</li>
+<li>You should return false from the <strong>Equals()</strong> function if the objects cannot be compared.</li>
+<li>However, if they are different types, you may throw an exception.</li>
+</ul>
+<h2 id="if-statements">If Statements</h2>
+<ul>
+<li><p><strong>Do not</strong> compare to <strong>true</strong> or <strong>false</strong> ; instead, compare pure Boolean expressions.</p>
+</li>
+<li><p>Initialize Boolean values with simple expressions rather than using an if-statement; always use parentheses to delineate the assigned expression.</p>
+<pre><code class="lang-csharp">bool needsUpdate = (Count &gt; 0 &amp;&amp; Objects[0].Modified);
+
+</code></pre>
+</li>
+<li><p>Always use brackets for flow-control blocks (switch, if, while, for, etc.)</p>
+</li>
+<li><p><strong>Do not</strong> add useless else blocks. An &quot;if&quot; statement may stand alone and an &quot;else if&quot; statement may be the last condition.</p>
+<pre><code class="lang-csharp">if (a == b)
+{
+    // Do something
+}
+else if (a &gt; b)
+{
+    // Do something else
+}
+
+// No final &amp;quot;else&amp;quot; required
+
+</code></pre>
+</li>
+<li><p>Do not force really complicated logic into an &quot;if&quot; statement; instead, use local variables to make the intent clearer. For example, imagine we have a lesson planner and want to find all unsaved lessons that are either unscheduled or are scheduled within a given time-frame. The following condition is too long and complicated to interpret quickly:</p>
+<pre><code class="lang-csharp">if (!lesson.Stored &amp;&amp; (((StartTime &lt;= lesson.StartTime) &amp;&amp; (lesson.EndTime &gt;= EndTime)) || !lesson.Scheduled))
+{
+    // Do something with the lesson
+}
+
+</code></pre>
+</li>
+<li><p>Even trying to apply the line-breaking rules results in an unreadable mess:</p>
+<pre><code class="lang-csharp">if (!lesson.Stored &amp;&amp; (((StartTime &lt;= lesson.StartTime) &amp;&amp; (lesson.EndTime &gt;= EndTime)) || !lesson.Scheduled))
+{
+    // Do something with the lesson
+}
+
+</code></pre>
+</li>
+<li><p>Even with this valiant effort, the intent of the ||-operator is difficult to discern. With local variables, however, the logic is much clearer:</p>
+<pre><code class="lang-csharp">bool lessonInTimeSpan = ((StartTime &lt;= lesson.StartTime) &amp;&amp; (lesson.EndTime &gt;= EndTime));
+
+if (!lesson.Stored &amp;&amp; (lessonInTimeSpan || ! lesson.Scheduled))
+{
+    // Do something with the lesson
+}
+
+</code></pre>
+</li>
+</ul>
+<h2 id="using-var">Using &quot;var&quot;</h2>
+<h1 id="section-14"></h1>
+<p>The use of var is permitted ONLY when the explicit-type is <strong>not known</strong> or <strong>unavailable</strong>. The use of var can be used <strong>only</strong> when you need  to:</p>
+<ul>
+<li>Use the type of ObjectQuery</li>
+<li>Use code that changes the type at runtime instead of compiletime. Is <strong>VERY IMPORTANT</strong> to comment the code with the specifications of this code.</li>
+</ul>
+<p>The use of var is <strong>only allowed</strong> when:</p>
+<ul>
+<li><p>The explicit-type is <strong>not known</strong> (anonymous).</p>
+<pre><code class="lang-csharp">var car = new { Year = 2020, Model = &quot;Mustang GT&quot;, Manufacturer = &quot;Ford&quot; };
+
+</code></pre>
+</li>
+<li><p>Working with <strong>LINQ queries.</strong></p>
+<pre><code class="lang-csharp">var query = from c in DataContext
+            where c.Id = 123
+            select new Car { 
+                Year = c.Year, 
+                Model = c.Model, 
+                Manufacturer = c.Model 
+            };
+
+</code></pre>
+</li>
+<li><p>Initializing the variable directly with an <strong>object constructor call</strong>.</p>
+<pre><code class="lang-csharp">var car = new Car();
+
+</code></pre>
+</li>
+<li><p>Readability needs to be improved.</p>
+<pre><code class="lang-csharp">//Bad
+
+List&lt;ThisIsMyLongCustomCarTypeObject&gt; data = CarTypeObjectEngine.GetAvailableModelByManufacturerId(1);
+
+// Good
+var data = CarTypeObjectEngine.GetAvailableModelByManufacturerId(1);
+
+</code></pre>
+</li>
+</ul>
+<p><strong>Note:</strong> <em>If the developer wants to know the type inside the &quot;var&quot; just move the cursor to the variable name.</em></p>
+<p>The use of var is <strong>NOT allowed</strong> when:</p>
+<ul>
+<li><p>Initializing <strong>value types</strong> or <strong>string</strong>.</p>
+<pre><code class="lang-csharp">var index = 0;
+var name = &quot;John Doe&quot;;
+
+</code></pre>
+</li>
+</ul>
+<h2 id="flow-control">Flow Control</h2>
+<h1 id="section-15"></h1>
+<ul>
+<li>Avoid invoking methods within a conditional expression.</li>
+<li>Avoid creating recursive methods. Use loops or nested loops instead.</li>
+<li>Avoid using foreachto iterate over immutable value-type collections. E.g. String arrays.</li>
+<li>Do not modify enumerated items within a foreach</li>
+<li>Use the <strong>ternary</strong> conditional operator only for trivial conditions. Avoid complex or compound ternary operations.
+<pre><code class="lang-csharp">int result = isValid ? 9 : 4;
+
+</code></pre>
+</li>
+<li>Avoid evaluating Boolean conditions against truer false.
+<pre><code class="lang-csharp">//Example:
+
+// Bad!
+if (isValid == true) {...}
+
+// Good!
+if (isValid) {...}
+
+</code></pre>
+</li>
+<li>Avoid assignment within conditional statements.
+<pre><code class="lang-csharp">//Example:
+
+if((i=2) == 2) {...}
+
+</code></pre>
+</li>
+<li>Avoid compound conditional expressions – use Boolean variables to split parts into multiple manageable expressions.
+<pre><code class="lang-csharp">//Example:
+
+// Bad!
+
+if (((value &gt; _highScore) &amp;&amp; (value != _highScore)) &amp;&amp; (value &lt; _maxScore)) {...}
+
+// Good!
+
+isHighScore = (value &gt;= _highScore);
+
+isTiedHigh = (value == _highScore);
+
+isValid = (value &lt; _maxValue);
+
+if ((isHighScore &amp;&amp; !isTiedHigh) &amp;&amp; isValid) {...}
+
+</code></pre>
+</li>
+<li>Avoid explicit Boolean tests in conditionals.
+<pre><code class="lang-csharp">//Example:
+
+// Bad!
+if(IsValid == true) {...}
+
+// Good!
+if(IsValid) {...}
+
+</code></pre>
+</li>
+<li>Only use switch/casestatements for simple operations with parallel conditional logic.</li>
+<li>Prefer nested if/elsever switch/casefor short conditional sequences and complex conditions.</li>
+<li>Prefer polymorphism over switch/caseto encapsulate and delegate complex operations.</li>
+</ul>
+<h2 id="exceptions">Exceptions</h2>
+<h1 id="section-16"></h1>
+<ul>
+<li><p>Do not use try/catch blocks for flow-control.</p>
+</li>
+<li><p>Only catch exceptions that you can handle.</p>
+</li>
+<li><p>Never declare an empty catch.</p>
+</li>
+<li><p>Avoid nesting a try/catch within a catch.</p>
+</li>
+<li><p>Always catch the most derived exception via exception filters.</p>
+</li>
+<li><p>Order exception filters from most to least derived exception type.</p>
+</li>
+<li><p>Avoid re-throwing an exception. Allow it to bubble-up instead.</p>
+</li>
+<li><p>If re-throwing an exception, preserve the original call stack by omitting the exception argument from the throw</p>
+<pre><code class="lang-csharp">//Example:
+
+// Bad!
+
+catch(Exception ex)
+{
+    Log(ex);
+    throw ex;
+}
+
+// Good!
+
+catch(Exception)
+{
+    Log(ex);
+    throw;
+}
+
+</code></pre>
+</li>
+<li><p>Only use the finallyblock to release resources from a try</p>
+</li>
+<li><p>Always use validation to avoid exceptions.</p>
+<pre><code class="lang-csharp">//Example:
+
+// Bad!
+
+try
+{
+    conn.Close();
+}
+Catch(Exception ex)
+{
+    // handle exception if already closed!
+}
+
+// Good!
+if(conn.State != ConnectionState.Closed)
+{
+    conn.Close();
+}
+
+</code></pre>
+</li>
+<li><p>Always set the innerExceptionproperty on thrown exceptions so the exception chain &amp; call stack are maintained.</p>
+</li>
+<li><p>Avoid defining custom exception classes. Use existing exception classes instead.</p>
+</li>
+<li><p>When a custom exception is required;</p>
+<ul>
+<li><p>Always derive from Exception <strong>not</strong> ApplicationException.</p>
+</li>
+<li><p>Always suffix exception class names with the word &quot;Exception&quot;.</p>
+</li>
+<li><p>Always add the SerializableAttributeto exception classes.</p>
+</li>
+<li><p>Always implement the standard &quot;Exception Constructor Pattern&quot;:</p>
+<pre><code class="lang-csharp">//Example:
+public MyCustomException ();
+
+public MyCustomException (string message);
+
+public MyCustomException (string message, Exception innerException);
+
+
+</code></pre>
+</li>
+<li><p>Always implement the deserialization constructor:</p>
+<pre><code class="lang-csharp">protected MyCustomException(SerializationInfo info, StreamingContext contxt);
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Always set the appropriate HResultvalue on custom exception classes.</p>
+<p>( <strong>Note:</strong> the ApplicationExceptionHResult = -2146232832)</p>
+</li>
+<li><p>When defining custom exception classes that contain additional properties:</p>
+<ul>
+<li>Always override the Messageproperty, ToString()method and the implicit operator string to include custom property values.</li>
+<li>Always modify the deserialization constructor to retrieve custom property values.</li>
+<li>Always override the GetObjectData(…)method to add custom properties to the serialization collection.
+<pre><code class="lang-csharp">//Example:
+
+public override void GetObjectData(SerializationInfo info,
+
+StreamingContext context)
+{
+    base.GetObjectData (info, context);
+    info.AddValue(&quot;MyValue&quot;, _myValue);
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href=" https://github.com/Astianax/DocFx-devteam/blob/Feature/PipeLineBranche/docfx-material/docs/articles/standard/back-end/languageUsage.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2020 CDevTeam<br>Generated with <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

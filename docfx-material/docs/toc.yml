@@ -1,2 +1,14 @@
-- name: 'Programming Coding Standards'
+- name: 'Coding Standard'
   href: articles/standard/intro.md
+- name: 'Branch Strategy / Pipeline'
+  href: articles/branching-CDPipeline/branchingcd.md
+- name: 'Unit Testing'
+  href: articles/unitTesting/intro.md
+- name: 'Pull Request'
+  href: articles/pullRequest/pullRequest.md
+- name: 'Code Review'
+  href: articles/codeReview/codeReview.md
+- name: 'Scrum'
+  href: articles/scrum/scrumDoc.md
+- name: 'Politics'
+  href: articles/politics/politics.md

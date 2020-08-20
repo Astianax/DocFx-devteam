@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Data Base | CDevTeam Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Data Base | CDevTeam Docs ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo_.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="data-base">Data Base</h1>
+
+<h2 id="table-prefix">Table Prefix</h2>
+<p>Database tables should have a prefix associated per module in the application. For example: SYS for system, WKF for workflow. After each prefix should have an underscore &quot;_&quot;.</p>
+<p>Use CODE prefix for lookup tables and CONF prefix for configuration tables.</p>
+<h2 id="table-name">Table Name</h2>
+<p>After prefix is used the table name should be named using Pascal Case, were the first letter of each word is CAPITLIZED.  For example:  PEI_WorkflowStep.</p>
+<h2 id="field-name">Field Name</h2>
+<p>Each table field name should be named using Pascal Case, were the first letter of each word is CAPITLIZED.  For example:  PEI_Student.FirstName.</p>
+<h2 id="fields-required-and-order">Fields Required and Order</h2>
+<p>Each table must contain the following required fields: CreatedBy, CreatedDate, UpdatedBy, Updated Date and IsDeleted. The order established for the table fields is:</p>
+<ol>
+<li>Primary Key ID</li>
+<li>Foreign Keys ID</li>
+<li>Other Fields</li>
+<li>Required Fields (CreatedBy, CreatedDate, etc.)</li>
+</ol>
+<h1 id="references">References</h1>
+<p>The following references were used in the creation of this Coding Standards Guide.</p>
+<ul>
+<li>Encodo c Handbook
+<a href="http://archive.msdn.microsoft.com/encodocsharphandbook/Release/ProjectReleases.aspx?ReleaseId=3352">http://archive.msdn.microsoft.com/encodocsharphandbook/Release/ProjectReleases.aspx?ReleaseId=3352</a></li>
+<li>CSharp Coding Standards
+<a href="http://weblogs.asp.net/lhunt/pages/CSharp-Coding-Standards-document.aspx">http://weblogs.asp.net/lhunt/pages/CSharp-Coding-Standards-document.aspx</a></li>
+<li>Microsoft All-In-One Code Framework Coding Guideline
+<a href="http://1code.codeplex.com/wikipage?title=All-In-One%20Code%20Framework%20Coding%20Standards&amp;referringTitle=Documentation">http://1code.codeplex.com/wikipage?title=All-In-One%20Code%20Framework%20Coding%20Standards&amp;referringTitle=Documentation</a></li>
+<li>c / VB.Net Coding Guidelines
+<a href="http://submain.com/blog/FreeCVBNETCodingGuidelinesEbookDownload.aspx">http://submain.com/blog/FreeCVBNETCodingGuidelinesEbookDownload.aspx</a></li>
+<li>Top 10 Best Practices for Production ASP.NET Applications
+<a href="http://daptivate.com/archive/2008/02/12/top-10-best-practices-for-production-asp-net-applications.aspx">http://daptivate.com/archive/2008/02/12/top-10-best-practices-for-production-asp-net-applications.aspx</a></li>
+<li>Best Practices to Improve ASP.Net Web Application Performance
+<a href="http://www.dotnetfunda.com/articles/article45.aspx">http://www.dotnetfunda.com/articles/article45.aspx</a></li>
+<li>ASP.NET Best Practices for High Performance Applications
+<a href="http://www.codeproject.com/KB/aspnet/ASPNET_Best_Practices.aspx">http://www.codeproject.com/KB/aspnet/ASPNET_Best_Practices.aspx</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href=" https://github.com/Astianax/DocFx-devteam/blob/Feature/PipeLineBranche/docfx-material/docs/articles/standard/back-end/bestPractice.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2020 CDevTeam<br>Generated with <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
