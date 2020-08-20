@@ -37,7 +37,8 @@
       "_gitContribute": {
         "repo": " https://github.com/Astianax/DocFx-devteam"
       },
-      "_gitUrlPattern": "github"
+      "_gitUrlPattern": "github",
+      "_appLogoPath": "images/logo_.png"
     },
     "noLangKeyword": false,
     "keepFileLink": false,
