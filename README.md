@@ -4,4 +4,6 @@
 
 ![Deployment](https://github.com/Astianax/DocFx-devteam/workflows/Deployment/badge.svg?branch=master)
 
-![Link de la Documentación] (https://cdevteam.netlify.app/)
+# Link de la Documentación
+
+![Link de la documentación](https://cdevteam.netlify.app/)
