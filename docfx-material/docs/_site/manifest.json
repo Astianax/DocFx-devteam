@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/pullRequest/pullRequest.html",
-          "hash": "dG3ToLg3EqRud1TnqSNCgQ=="
+          "hash": "3QE5Kdmsw+Vf+NohYctKkQ=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/languageUsage.html",
-          "hash": "I1XnhwIRRt1QO7BH/e5UKA=="
+          "hash": "EOw7m0cAvH6kc1n5CLR31g=="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 18,
-          "skipped_file_count": 18
+          "skipped_file_count": 17
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
