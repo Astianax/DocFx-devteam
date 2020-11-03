@@ -7,3 +7,8 @@
 # Link de la Documentación
 
 [Link de la documentación](https://cdevteam.netlify.app/)
+
+
+# Run Dockfx-File
+cd docfx-material
+.\docfx docs\docfx.json --serve
