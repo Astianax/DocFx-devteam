@@ -35,7 +35,8 @@ For each Pull Request with require this forms:
 ### Checklist:
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
-- [ ] My code follows the code style of this project.
+- [ ] My code follows the code style of this project
+( Example: All my methods used Async (except ApiController), All my DTO and Entity inherit from this base).
 - [ ] My change requires a change to the documentation.
 - [ ] I have updated the documentation accordingly.
 - [ ] I have read the **CONTRIBUTING** document (https://cdevteam.netlify.app/).
@@ -74,6 +75,7 @@ Sesión de trabajo realizado la programación necesaria para cumplir con el requ
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] My code follows the code style of this project.
+( Example: All my methods used Async (except ApiController), All my DTO and Entity inherit from this base).
 - [ ] My change requires a change to the documentation.
 - [ ] I have updated the documentation accordingly.
 - [ ] I have read the **CONTRIBUTING** document (https://cdevteam.netlify.app/).
