@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Constants | CDevTeam Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Constants | CDevTeam Docs ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo_.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="constants">Constants</h2>
+
+<p>In JavaScript, the <strong>Object.freeze()</strong> method <em>freezes</em> an object.  A frozen object can no longer be changed.</p>
+<pre><code>&lt;!---  examples --&gt;
+
+const numbers = {
+    one: 1,
+    two: 2,
+    three: 3
+};
+
+Object.freeze(numbers);
+
+&lt;!-- Or directly assigned --&gt;
+
+const numbers = Object.freeze({
+    one: 1,
+    two: 2,
+    three: 3
+});
+
+</code></pre>
+<h3 id="pros--cons">Pros &amp; Cons</h3>
+<h4 id="pros">Pros</h4>
+<ol>
+<li><p>Frozen objects also can no longer be changed; preventing new properties frm being added to it, existing properties from being removed,
+prevent changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed.</p>
+</li>
+<li><p>Freezing an object also prevents its prototype from being changed.  Freeze method returns the same object that was passed in.</p>
+</li>
+</ol>
+<h4 id="cons">Cons</h4>
+<ol>
+<li>Frozen objects with nested properties are not actually frozen.  Child object's properties are mutable if the child object is not frozen as well.</li>
+</ol>
+<h3 id="our-project-structure">Our Project Structure</h3>
+<p>In our main project, constants are stored in the following path <em>src/utils/constants</em>.  Each constant structure is placed in its corresponding folder.</p>
+<p><img src="../../../images/constants.png" alt="constants"></p>
+<h4 id="usage">Usage</h4>
+<pre><code> &lt;!--- define and export frozen object in its own file --&gt;
+
+const StudentStatuses = Object.freeze({
+  PreRegistro: 'Pre-Registro',
+  Registro: 'Registro',
+  Evaluado: 'Evaluado',
+  Servido: 'Servido',
+  NoElegible: 'No Elegible',
+  Egreso: 'Egreso',
+  Disponible: 'Disponible',
+  Inactivo: 'Inactivo',
+  Elegible: 'Elegible'
+});
+
+export default StudentStatuses;
+
+&lt;!-- import in file where it is going to be used --&gt;
+
+import StudentStatuses from '@/utils/constants/reg/StudentStatuses';
+</code></pre>
+<h3 id="references">References</h3>
+<p>The following references were used in the creation of this documentation:</p>
+<ul>
+<li><p>JavaScript Constants
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const</a></p>
+</li>
+<li><p>Object Freeze
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze</a></p>
+</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href=" https://github.com/Astianax/DocFx-devteam/blob/Feature/Constants/docfx-material/docs/articles/standard/front-end/constants.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2020 CDevTeam<br>Generated with <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
