@@ -1,7 +1,7 @@
 - name: 'Coding Standard'
   href: articles/standard/intro.md
-- name: 'Branch Strategy / Pipeline'
-  href: articles/branching-CDPipeline/branchingcd.md
+- name: 'Strategies'
+  href: articles/strategies/intro.md
 - name: 'Unit Testing'
   href: articles/unitTesting/intro.md
 - name: 'Pull Request'
