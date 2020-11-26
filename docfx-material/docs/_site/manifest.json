@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/NewProjectsDevteam/Documentation/docfx-material/docs",
+  "source_base_path": "C:/Khensys/DocFx-devteam/docfx-material/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "CHANGELOG.html",
-          "hash": "++r2O67oq5NL7mjTMu1Jsg=="
+          "hash": "cyWpvrxyJNQlwqP0f63sDA=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "EdXHP9vC5Raj6Mx8Co2gKw=="
+          "hash": "x+gYVr37aJ42bAZcq2Va0A=="
         }
       },
       "is_incremental": false,
@@ -50,23 +50,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/branching-CDPipeline/branchingcd.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/branching-CDPipeline/branchingcd.html",
-          "hash": "vIXhQg2n8QlUKWyezYNq1Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "articles/codeReview/codeReview.md",
       "output": {
         ".html": {
           "relative_path": "articles/codeReview/codeReview.html",
-          "hash": "HsqbVshUXE/+WdgqisuS2A=="
+          "hash": "Y3NF/YXw28Fewyea8VkOxA=="
         }
       },
       "is_incremental": false,
@@ -78,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/politics/politics.html",
-          "hash": "62lkROeOB+MckRTtZONJbw=="
+          "hash": "KODjKbezeAYZj27uYoBAKQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/pullRequest/pullRequest.html",
-          "hash": "3QE5Kdmsw+Vf+NohYctKkQ=="
+          "hash": "EwPhV8Blw24NcA7HZCoM+A=="
         }
       },
       "is_incremental": false,
@@ -102,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/scrum/scrumDoc.html",
-          "hash": "hwq5JfP63bUZEK1kbKyJMA=="
+          "hash": "3G2DBYhhEPkYDzYYTo6o0Q=="
         }
       },
       "is_incremental": false,
@@ -114,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/bestPractice.html",
-          "hash": "dnd+7QwPAMTBJHNRdi8RYg=="
+          "hash": "LLxPRfgIFDsii0qBl2ESkg=="
         }
       },
       "is_incremental": false,
@@ -126,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/formatting.html",
-          "hash": "IVZ9TQoSLuqTmIsSmlXxjg=="
+          "hash": "MylNSEsFVbqbV6ezyG9WuQ=="
         }
       },
       "is_incremental": false,
@@ -138,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/languageUsage.html",
-          "hash": "EOw7m0cAvH6kc1n5CLR31g=="
+          "hash": "TUCKQZ54PeAAc+mifOBLfA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/back-end/naming.html",
-          "hash": "vCUKjiCDyMPnVuz6oetH2A=="
+          "hash": "/56/K8cxr9Ojtjdt4QbZ+w=="
         }
       },
       "is_incremental": false,
@@ -162,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/content4.html",
-          "hash": "xVA2frnKmZ6nAXDoouR3Aw=="
+          "hash": "Tuw8y0E6Yjy/wB1RAsgo5Q=="
         }
       },
       "is_incremental": false,
@@ -174,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/front-end/content3.html",
-          "hash": "+pJBKfmaMRfrmcd6XVhVoA=="
+          "hash": "vKzOX1lYTD79qT19qmHKJQ=="
         }
       },
       "is_incremental": false,
@@ -186,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/standard/intro.html",
-          "hash": "Z58oM07zj/Ff53HlT//e9Q=="
+          "hash": "2OroqslEBUVwo8xV214s2g=="
         }
       },
       "is_incremental": false,
@@ -206,11 +194,83 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/strategies/branching.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/strategies/branching.html",
+          "hash": "9gtrdiqdIKjsoZf3BKx/Ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/strategies/components/verdaccio.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/strategies/components/verdaccio.html",
+          "hash": "rfgtHOmq4LB8AREZ2KPb5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/strategies/cssmanagement.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/strategies/cssmanagement.html",
+          "hash": "QFo37goT0p0qh4insbl5vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/strategies/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/strategies/intro.html",
+          "hash": "DRwnxvBjRxckx/XYIKyNvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/strategies/pipelines.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/strategies/pipelines.html",
+          "hash": "irwKYRAXpd5S2LsJIAlFAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/strategies/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/strategies/toc.html",
+          "hash": "opi1ElApHQVUKYfUHe9xhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/unitTesting/back-end/backEnd.md",
       "output": {
         ".html": {
           "relative_path": "articles/unitTesting/back-end/backEnd.html",
-          "hash": "y/jGraCaPakNIJthDbuVVQ=="
+          "hash": "ez+qZMF549cYCd645zFNFw=="
         }
       },
       "is_incremental": false,
@@ -222,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/unitTesting/front-end/frontEnd.html",
-          "hash": "3IBoDuxGBr74nGqqnoc5pQ=="
+          "hash": "VbpBPJV3HVVKzxnm3t0p+w=="
         }
       },
       "is_incremental": false,
@@ -234,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/unitTesting/intro.html",
-          "hash": "Pfb5WPSONqT/9GmEWcsdBQ=="
+          "hash": "jEkX5CAhxq8mGMWWM+BIyg=="
         }
       },
       "is_incremental": false,
@@ -440,12 +500,23 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/verdaccio.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/verdaccio.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "C1zTbyI9xaR7IQ8sudRF8A=="
+          "hash": "pEzLZFXNlAU8wvwnEjT+RQ=="
         }
       },
       "is_incremental": false,
@@ -457,7 +528,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "FVMwBZP4Iwjwyoun04ErCA=="
+          "hash": "0x0NIcdx0U1wZiyf1m86mQ=="
         }
       },
       "is_incremental": false,
@@ -476,8 +547,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 18,
-          "skipped_file_count": 17
+          "total_file_count": 22,
+          "skipped_file_count": 22
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

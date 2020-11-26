@@ -191,22 +191,3 @@ In addition to the feature and release flow, a hotfix example is as follows:
 
 ### Source
 https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
-
-# CI/CD Pipelines
-
-
-> ## Development
->
- >![DevPipeline](../../images/DevPipeline.png)
-
-> ## Release
->
- >![ReleasePipeline](../../images/ReleasePipeline.png)
-
-> ## Production
->
- > ![ProdPipeline](../../images/ProdPipeline.png)
-
-> ## HotFix
->
- > ![HotFixPipeline](../../images/HotFixPipeline.png)
