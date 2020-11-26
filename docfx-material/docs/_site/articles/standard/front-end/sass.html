@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sass | CDevTeam Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Sass | CDevTeam Docs ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo_.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sass">Sass</h1>
+
+<p>Sass is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized and makes it easy to share design within and across projects.</p>
+<h3 id="syntax">Syntax</h3>
+<p>The SCSS syntax uses the file extension <em>.scss</em>. With a few small exceptions, it’s a superset of CSS, which means essentially all
+valid CSS is valid SCSS as well. Because of its similarity to CSS, it’s the easiest syntax to get used to and the most popular.</p>
+<pre><code>@mixin generateColorBorder($name, $color){
+    .text-border__bottom--#{$name} {
+        color: $color !important;
+        border-bottom-color: $color !important;
+    }
+}
+
+.data-name, .data-label{
+  @extend .font-14;
+  @extend .color-secondary-6;
+}
+
+.data{
+  @extend .font-16;
+  @extend .color-black;
+  font-weight: normal;
+}
+</code></pre>
+<h3 id="structure">Structure</h3>
+<p>Just like CSS, most Sass stylesheets are mainly made up of style rules that contain property declarations. But Sass stylesheets have many more features that can exist alongside these.</p>
+<h4 id="statements">Statements</h4>
+<ul>
+<li><strong>Universal Statements</strong></li>
+</ul>
+<p>These types of statements can be used anywhere in a Sass stylesheet:</p>
+<ul>
+<li>Variable declarations, like <em>$var: value</em>.</li>
+<li>Flow control at-rules, like _@if_ and _@each_.</li>
+<li>The _@error_, _@warn_, and _@debug_ rules.</li>
+</ul>
+<ul>
+<li><strong>CSS Statements</strong></li>
+</ul>
+<p>These statements produce CSS. They can be used anywhere except within a @function:</p>
+<ul>
+<li>Style rules, like <em>h1 { /* ... */ }</em>.</li>
+<li>CSS at-rules, like _@media_ and _@font-face_.</li>
+<li>Mixin uses using _@include_.</li>
+<li>The _@at-root_ rule.</li>
+</ul>
+<ul>
+<li><strong>Top-Level Statements</strong></li>
+</ul>
+<p>These statements can only be used at the top level of a stylesheet, or nested within a CSS statement at the top level:</p>
+<ul>
+<li>Module loads, using _@use_.</li>
+<li>Imports, using _@import_.</li>
+<li>Mixin definitions using _@mixin_.</li>
+<li>Function definitions using _@function_.</li>
+</ul>
+<h4 id="our-project">Our Project</h4>
+<p>In our project scss syntax is being used.  So, our sass files are .scss extentions.  This files are store in src/assets/scss in the folder where they should belong.</p>
+<h4 id="import">Import</h4>
+<pre><code>@import &quot;./colors&quot;;
+@import &quot;./layouts&quot;;
+@import &quot;./fonts&quot;;
+@import &quot;./backgrounds&quot;;
+@import &quot;./borders&quot;;
+</code></pre>
+<h3 id="references">References</h3>
+<p>The following references were used in the creation of this documentation:</p>
+<ul>
+<li><p>Sass Documentation
+<a href="https://sass-lang.com/documentation">https://sass-lang.com/documentation</a></p>
+</li>
+<li><p>Preprocesor Guide
+<a href="https://www.creativebloq.com/web-design/what-is-sass-111517618">https://www.creativebloq.com/web-design/what-is-sass-111517618</a></p>
+</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href=" https://github.com/Astianax/DocFx-devteam/blob/Feature/Saas/docfx-material/docs/articles/standard/front-end/sass.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2020 CDevTeam<br>Generated with <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
