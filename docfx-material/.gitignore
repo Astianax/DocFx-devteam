@@ -261,4 +261,5 @@ paket-files/
 *.exe
 *.exe.config
 *.dll
+docfx-material/docs/_site/*
 docfx-material/docs/_site/
