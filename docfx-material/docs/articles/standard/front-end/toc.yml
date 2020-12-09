@@ -1,6 +1,8 @@
 items:
 - name: 'Control Prefixes'
   href: controlPrefixes.md
+- name: 'File Structure'
+  href: fileStructure.md
 - name: 'Constants'
   href: constants.md
 - name: 'Sass'
